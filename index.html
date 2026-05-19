@@ -345,6 +345,7 @@
     java: `public class App {\n    public static void main(String[] args) {\n        String s = null;\n        System.out.println(s.length());\n    }\n}`,
     cpp: `#include <iostream>\nvoid leak() {\n    int* arr = new int[100];\n    arr[0] = 42;\n}\nint main() {\n    for (int i = 0; i < 1000; i++) leak();\n}`,
   };
+  //all color setting
 
   const chatContainer = document.getElementById('chatContainer');
   const emptyState    = document.getElementById('emptyState');
