@@ -413,7 +413,7 @@
 
     } catch (err) {
       removeLoading(loadingId);
-      // FIX: pass error object in a consistent shape
+      // FIX
       appendAssistantMessage({
         explanation: err.message || 'Something went wrong.',
         fixed_code: '',
@@ -477,7 +477,7 @@
   function appendAssistantMessage(data, lang) {
     const fixedCode = (data.fixed_code || '').replace(/\\n/g, '\n');
 
-    // FIX: use data.explanation (not data.error) for successful responses
+    // FIX: 
     const explanation = data.explanation || data.error || 'No explanation returned.';
     const confidence  = data.confidence || 'medium';
     const warning     = data.warning || null;
@@ -558,7 +558,7 @@
       if (copyBtn2) copyBtn2.addEventListener('click', e => doCopy(e.currentTarget));
     }
 
-    // FIX: wire up collapsible detailed explanation toggle
+    // FIX
     if (detailed) {
       document.getElementById(detBodyId).textContent = detailed;
       document.getElementById(detId).addEventListener('click', () => {
